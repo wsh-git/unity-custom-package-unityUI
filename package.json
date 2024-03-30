@@ -1,0 +1,20 @@
+{
+  "name": "com.wshunity.uisystem",
+  "displayName": "Wsh Unity UISystem",
+  "version": "0.0.1",
+  "unity": "2017.2",
+  "keywords": [
+    "UI System"
+  ],
+  "description": "This is a very simple ui system.",
+  "repository": {
+    "url": "https://github.com/wsh-git/unity-custom-package-unityUI.git",
+    "type": "git",
+    "revision": ""
+  },
+  "author": {
+    "name": "wshunity",
+    "email": "",
+    "url": ""
+  }
+}

@@ -1,0 +1,17 @@
+{
+    "name": "Wsh.UI",
+    "rootNamespace": "",
+    "references": [
+        "GUID:8b3793c9f054bb447a01469cf6fd8f6e",
+        "GUID:a5608bbae31330d45b61e3ffb4a451e5"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
