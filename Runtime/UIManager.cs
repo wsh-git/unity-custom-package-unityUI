@@ -154,6 +154,14 @@ namespace Wsh.UI {
             });
         }
 
+        private void Update() {
+            for(int i = 0; i < m_viewList.Count; i++) {
+                if(!m_viewList[i].IsCloseing) {
+                    m_viewList[i].OnUpdate(Time.deltaTime);
+                }
+            }
+        }
+
         private void SetMessage(UIAnimationGroupPlayer animationPlayer, Text textMsg, string msg) {
             textMsg.text = msg;
             animationPlayer.Play();

@@ -17,18 +17,20 @@ namespace Wsh.UI {
         public string Name { get { return m_uiDefine.Name; } }
         public float OpenTime { get { return m_openTime; } }
         public bool CanCloseByEsc { get { return m_uiDefine.CanCloseByEsc; } }
+        public bool IsCloseing => m_isCloseing;
 
         private float m_openTime;
         private UIManager.UIDefine m_uiDefine;
         protected UIManager m_uiMgr;
         protected UIBaseAnimation[] m_uIAnimations;
-
+        private bool m_isCloseing;
         //debug
         private float m_lastImageMaskDebugAlpha;
 
         public void OnStart(UIManager uiMgr, UIManager.UIDefine uiDefine) {
             m_uiMgr = uiMgr;
             m_uiDefine = uiDefine;
+            m_isCloseing = false;
             m_uIAnimations = transform.gameObject.GetComponentsInChildren<UIBaseAnimation>();
             m_openTime = Time.realtimeSinceStartup;
         }
@@ -75,8 +77,13 @@ namespace Wsh.UI {
             });
         }
 
+        public virtual void OnUpdate(float deltaTime) {
+
+        }
+
         public virtual void OnClose(Action<BaseView> onComplete) {
             m_uiMgr.LockInput();
+            m_isCloseing = true;
             m_uiMgr.UpdateImageMaskDebug(m_lastImageMaskDebugAlpha);
             OnBeforeAnimationCloseEvent?.Invoke();
             PlayAnimation(CLOSE_ANIMATION_GROUP, view => {
